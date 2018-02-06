@@ -7,11 +7,11 @@ import org.junit.Test;
 
 public class DoctorTest {
 	
-	Doctor  underTest = new Doctor("1111", "Phil");
+	Doctor  underTest = new Doctor("1111", "Phil", "Brain");
 
 	@Test
 	public void shouldDrawBlood() {
-		Doctor underTest = new Doctor("1111", "Phil");
+		Doctor underTest = new Doctor("1111", "Phil", "Brain");
 		Patient patient = new Patient();
 
 		int bloodsBefore = patient.getBloods();
@@ -33,7 +33,7 @@ public class DoctorTest {
 
 	@Test
 	public void shoudlDrawBloodFromDouble() {
-		Doctor underTest = new Doctor("1111", "Phil");
+		Doctor underTest = new Doctor("1111", "Phil", "Brain");
 		Bleedable patient = new BleedableDouble();
 
 		underTest.drawBlood(patient);
@@ -43,7 +43,7 @@ public class DoctorTest {
 
 	@Test
 	public void shouldHaveSalary() {
-		Employee underTest = new Doctor("1111", "Phil");
+		Employee underTest = new Doctor("1111", "Phil", "Brain");
 
 		int salary = underTest.getSalary();
 
@@ -52,7 +52,7 @@ public class DoctorTest {
 
 	@Test
 	public void shouldIncreasePatientHealth() {
-		Doctor underTest = new Doctor("1111", "Phil");
+		Doctor underTest = new Doctor("1111", "Phil", "Brain");
 		Patient patient = new Patient();
 
 		int healthBefore = patient.getHealth();
@@ -64,12 +64,18 @@ public class DoctorTest {
 	@Test
 	public void shouldReturnEmpNumber() {
 		String check = underTest.getEmpNumber();
-		assertEquals(check, "1111");
+		assertEquals("1111", check);
 	}
 	@Test
 	public void shouldReturnEmpName() {
 		String check = underTest.getEmpName();
-		assertEquals(check, "Phil");
+		assertEquals("Phil", check);
+	}
+	
+	@Test
+	public void shouldReturnSpecialty() {
+		String check = underTest.getSpecialty();
+		assertEquals("Brain", check);
 	}
 	
 

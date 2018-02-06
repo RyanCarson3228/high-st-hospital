@@ -1,7 +1,7 @@
 package hospital;
 
-import static org.hamcrest.Matchers.is;
-import static org.junit.Assert.assertThat;
+
+import static org.junit.Assert.assertTrue;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -12,16 +12,15 @@ public class SurgeonTest {
 	
 	@Before
 	public void setup() {
-		underTest = new Surgeon("", "", false);
+		underTest = new Surgeon("2222", "Harry", true);
 	}
 	
 	@Test
-	public void shouldReturnTrue() {
-		Surgeon underTest = new Surgeon("2222", "Harry", true);
-		
+	public void shouldReturnTrue() {		
 		boolean check = underTest.getIsOperating();
-		
-		assertThat(check, is(true));
+		assertTrue(check);
+//		assertThat(check, is(true));
 	}
+
 
 }
